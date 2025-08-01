@@ -1,0 +1,15 @@
+<%= form_with model: [@project, member], url: admin_project_member_path(@project, member), method: :patch, local: true do |f| %>
+  <div>
+    <%= f.label :name, "名前" %>
+    <%= f.text_field :name %>
+  </div>
+
+  <div>
+    <%= f.label :role, "役割" %>
+    <%= f.select :role, ["メンバー", "マネージャー"] %>
+  </div>
+
+  <div>
+    <%= f.submit "更新する" %>
+  </div>
+<% end %>
